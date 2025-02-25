@@ -70,7 +70,7 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: white;
+    background: linear-gradient(to right, white, #eee0ca);
     width: 70%;
     max-width: 900px;
     border-radius: 12px;
@@ -100,9 +100,13 @@ body {
 }
 
 .hero-content p {
-    font-size: 18px;
-    margin-bottom: 20px;
-    color: #073847;
+    font-size: 25px;
+    color: #16456b;
+    font-family:'Times New Roman', Times, serif;
+    margin-left: 20px; 
+    margin-top: 12px;
+    font-style :unset;
+    font-weight: 500;
 }
 
 .buttons {
