@@ -1,0 +1,269 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Base Body Styles */
+body {
+    /* Remove the flex layout that was forcing everything to center */
+    background: linear-gradient(to right, #f39c12, #d68910);
+    color: #ffffff;
+}
+
+/* Logo */
+.logo {
+    color: white;
+    font-weight: bolder;
+    font-size: x-large;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 20px 50px;
+    background: #1B1B2F;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    padding: 8px 16px;
+    transition: 0.3s;
+    border-radius: 5px;
+}
+
+.nav-links li a:hover,
+.nav-links .active {
+    background: #FFD700;
+    color: black;
+}
+
+/* Hero Section */
+.hero {
+    /* The navbar is fixed, so add top padding to avoid overlap */
+    padding-top: 120px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Enough height to fill screen */
+    margin: 0 auto;    /* Center the hero-box horizontally */
+}
+
+.hero-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    width: 70%;
+    max-width: 900px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    position: relative;
+    transition: 0.3s;
+    padding: 15px;
+    color: #000; /* Text color inside the hero box */
+}
+
+.hero-content {
+    flex: 1;
+    margin-right: 20px;
+    text-align: left;
+}
+
+.hero-content h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #731cad;
+}
+
+.hero-content h1 {
+    font-size: 40px;
+    color: #bb2520;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #073847;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    background: #FFD700;
+    color: black;
+    padding: 12px 24px;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 8px;
+    transition: 0.3s;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #ffcc00;
+}
+
+.black {
+    background: #1B1B2F;
+    color: white;
+    border: 2px solid white;
+}
+
+.black:hover {
+    background: white;
+    color: black;
+}
+
+/* Profile Image */
+.profile-box {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 280px;
+    max-width: 250px;
+    margin-left: 20px;
+}
+
+.profile-img {
+    width: 250px;
+    height: 280px;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+
+.profile-img:hover {
+    opacity: 0;
+}
+
+/* Social Icons */
+.social-icons {
+    margin-top: 20px;
+}
+
+.social-icons a img {
+    width: 30px;
+    margin-right: 10px;
+    transition: 0.3s;
+}
+
+.social-icons a:hover img {
+    transform: scale(1.2);
+    filter: brightness(1.5);
+}
+
+/* Footer */
+footer {
+    background: #1B1B2F;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    width: 100%;
+    font-size: 16px;
+}
+
+/* 
+   ================================================
+   ================ MEDIA QUERIES =================
+   ================================================
+*/
+
+/* 
+   For screens up to 768px wide 
+   (common mobile & tablet breakpoint):
+*/
+@media (max-width: 768px) {
+  /* Navbar: stack or shrink */
+  .navbar {
+    flex-wrap: wrap; /* Allows nav links to move below logo */
+    padding: 15px 20px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  /* Hero Box: stack content vertically */
+  .hero-box {
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .hero-content {
+    margin-right: 0;
+    margin-bottom: 20px; /* space before profile image */
+    text-align: center;  /* center text on mobile */
+  }
+
+  .hero-content h1 {
+    font-size: 28px;
+  }
+
+  .hero-content h2 {
+    font-size: 22px;
+  }
+
+  .hero-content p {
+    font-size: 16px;
+  }
+
+  .profile-box {
+    max-width: 100%;
+    height: auto;
+    margin-left: 0;
+  }
+
+  .profile-img {
+    width: 200px;
+    height: 220px;
+  }
+
+  /* Buttons stack or center */
+  .buttons {
+    justify-content: center;
+  }
+}
+
+/* 
+   For even smaller screens, you can add another 
+   breakpoint if needed, e.g. max-width: 480px 
+*/
+@media (max-width: 480px) {
+  .hero-content h1 {
+    font-size: 24px;
+  }
+  .hero-content h2 {
+    font-size: 18px;
+  }
+  .profile-img {
+    width: 180px;
+    height: 200px;
+  }
+}
